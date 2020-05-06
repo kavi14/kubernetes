@@ -104,6 +104,11 @@ kops update cluster --yes
 ```
 Above command may take some time to create the required infrastructure resources on AWS. Execute the validate command to check its status and wait until the cluster becomes ready
 
+Kavi Note : Got error when running 'kops validate cluster' 
+
+'''Did not find API endpoint for gossip hostname; may not be able to reach cluster
+kops has set your kubectl context to simplilearn.in '''
+
 ```sh
 kops validate cluster
 ```
