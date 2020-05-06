@@ -83,6 +83,21 @@ kops create cluster \
 kops create cluster --state=s://kpos.s3.bucket. --node-count=2 --master-size=t2.micro --node-size=t2.micro --zones=us-east-2a,us-east-2b --name=kaviintelligentsolutions.com  --dns private --master-count 1
 '''
 
+After this 
+### 9.1 
+Step 1 : go to below ir and run
+/home/ec2-user/.ssh
+
+Step 2: Run below cmd
+kops create secret --name kaviintelligentsolutions.com sshpublickey admin -i ~/.ssh/id_rsa.pub
+
+Step 3 : After above run, run below cmd
+kops update cluster --yes
+
+NOTE : You might get this error sometime SSH public key must be specified when running with AWS (create with `kops create secret --name kaviintelligentsolutions.com sshpublickey admin -i ~/.ssh/id_rsa.pub`)
+-- Doing ### 9.1 would solve this problem 
+
+
 ### 10. Create kubernetes cluster
 
 ```sh
