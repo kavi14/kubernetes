@@ -51,8 +51,7 @@ Add following content into .bashrc, you can choose any arbitary name for cluster
 export KOPS_CLUSTER_NAME=simplilearn.in
 export KOPS_STATE_STORE=s3://simplilearn.in.k8s
 
-Kavi (use below)
-export KOPS_CLUSTER_NAME=kaviintelligentsolutions.com.
+Kavi (use below for S3 bucket name)
 export KOPS_STATE_STORE=s3://kpos.s3.bucket
 ```
 Then running command to reflect variables added to .bashrc
@@ -74,7 +73,7 @@ kops create cluster \
 --master-size=t2.micro \
 --node-size=t2.micro \
 --zones=us-east-2a,us-east-2b \
---name=kaviintelligentsolutions.com \
+--name=${KOPS_CLUSTER_NAME} \
 --dns private \
 --master-count 1
 ```
